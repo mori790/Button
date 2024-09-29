@@ -40,7 +40,6 @@ function App() {
       {/* クリック時に発火する関数を外部から指定したボタン */}
       <Button 
         label={loading.button2 ? "Loading..." : "Click Me" }  
-        width="120px" height="40px" 
         onClick={() => handleClick("button2")}
         loading={loading.button2} />
       {/* リンクとして振る舞うボタン */}

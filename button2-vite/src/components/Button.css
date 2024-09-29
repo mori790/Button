@@ -10,6 +10,30 @@
     margin-right: 5px;
     position: relative;
 
+    max-width: 100%;
+    box-sizing: border-box;
+
+  }
+
+
+  
+/* ボタンの幅を画面サイズに応じて調整 */
+
+/* タブレットやパソコン */
+@media (max-width: 768px) {
+    .button {
+      padding: 8px 16px;
+      font-size: 14px;
+      width: 100%; /* フル幅 */
+    }
+  }
+  /* スマホなど */
+  @media (max-width: 480px) {
+    .button {
+      padding: 6px 12px;
+      font-size: 12px;
+      width: 100%; /* フル幅 */
+    }
   }
   
   /* 非活性状態 */
