@@ -16,15 +16,23 @@ function App() {
   };
 
   return (
+    <>
     <div>
       <h1>Button Showcase</h1>
-      {/* 通常のボタン */}
+      {/* ラベルを外部から指定したボタン */}
       <Button label={loading ? "Loading..." : "Click Me" } onClick={handleClick} loading={loading} />
-      <Button label="Click Me" onClick={() => alert('Button clicked!')} />
-      <Button label="Click Me" onClick={() => alert('Button clicked!')} />
-      <Button label="Click Me" onClick={() => alert('Button clicked!')} />
+      {/* クリック時に発火する関数を外部から指定したボタン */}
+      <Button label={loading ? "Loading..." : "Click Me" } width="120px" height="40px" onClick={handleClick} loading={loading} />
+      {/* リンクとして振る舞うボタン */}
+      <Button label={loading ? "Loading..." : "Go to google" } href="https://google.com" target="_blank"  />
       {/* 他のパターンのボタン */}
     </div>
+    {/* フォーム内で使用される。typeがsubmit */}
+    <form onSubmit={(e) => { e.preventDefault(); alert('Form submitted!'); }}>
+      <Button label="Submit Form" type="submit" />
+    </form>
+    </>
+    
   );
 }
 

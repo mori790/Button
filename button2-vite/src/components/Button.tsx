@@ -3,14 +3,14 @@ import './Button.css';
 
 interface ButtonProps {
   label: string;
-  onClick?: () => void;
+  onClick?: () => void;  // 外部からクリック時に発火する関数指定
   disabled?: boolean;
   loading?: boolean;
-  type?: 'button' | 'submit' | 'reset';
-  href?: string;
-  target?: '_blank' | '_self' | '_parent' | '_top';
-  width?: string;
-  height?: string;
+  type?: 'button' | 'submit' | 'reset';  // ボタンのタイプを指定
+  href?: string;  // リンクのURL先指定
+  target?: '_blank' | '_self' | '_parent' | '_top';  // リンクの開き方指定
+  width?: string;  // 親コンポーネントから幅制御
+  height?: string;  // 親コンポーネントから高さ制御
 }
 
 const Button: React.FC<ButtonProps> = ({
