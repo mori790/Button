@@ -11,6 +11,7 @@ interface ButtonProps {
   target?: '_blank' | '_self' | '_parent' | '_top';  // リンクの開き方指定
   width?: string;  // 親コンポーネントから幅制御
   height?: string;  // 親コンポーネントから高さ制御
+  icon?: React.ReactNode;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,7 +23,8 @@ const Button: React.FC<ButtonProps> = ({
   href,
   target = '_self',
   width,
-  height
+  height,
+  icon
 }) => {
   const styles = { width, height };
 
@@ -37,6 +39,7 @@ const Button: React.FC<ButtonProps> = ({
         onClick={disabled || loading ? (e) => e.preventDefault() : onClick}
         aria-disabled={disabled || loading}
       >
+        {icon && <span className="icon">{icon}</span>}
         {loading ? 'Loading...' : label}
       </a>
     );
@@ -51,6 +54,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       style={styles}
     >
+      {icon && <span className="icon-left">{icon}</span>}
       {loading ? 'Loading...' : label}
     </button>
   );
